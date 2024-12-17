@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China Town Online</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* Set the background color of the whole page to Lemon Green */
+        body {
+            background-color: #000; /* Lemon Green background */
+            font-family: 'Arial', sans-serif;
+            color: #f9f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #000000; /* Green header */
+            padding: 20px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header .logo {
+            font-size: 2em;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: rgb(237, 231, 231);
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        header nav ul li a:hover {
+            color: #51b95a;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            color: #fdf3f3;
+            position: relative;
+            background-color: #000; /* Lighter shade of lemon green */
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+        }
+
+        .hero span {
+            color: #67d274;
+        }
+
+        .hero form {
+            margin-top: 20px;
+        }
+
+        .hero input {
+            padding: 12px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+            width: 60%;
+            max-width: 500px;
+        }
+
+        .hero button {
+            padding: 12px 15px;
+            font-size: 1.1em;
+            background-color: #59b168;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Categories Section */
+        .categories,
+        .featured-products,
+        .testimonials,
+        .newsletter {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #000; 
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .category,
+        .product {
+            display: inline-block;
+            width: 30%;
+            margin-right: 2%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .category img,
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product button {
+            padding: 10px 15px;
+            background-color: #55c974;
+            color:white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Testimonials Section */
+        .testimonial {
+            background-color: #111111;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .testimonial h4 {
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Newsletter Section */
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            width: 60%;
+            max-width: 500px;
+        }
+
+        .newsletter button {
+            padding: 12px 20px;
+            font-size: 1.1em;
+            background-color: #6dda74;
+            color: #f3f4f3;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        .footer-links a,
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-links a:hover,
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .category, .product {
+                width: 45%;
+                margin-right: 5%;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero input, .hero button {
+                width: 80%;
+                margin: 10px 0;
+            }
+
+            .footer-links {
+                display: block;
+                margin-top: 20px;
+            }
+
+            .footer-links a {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">China Town</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="process_form.php">staff</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Find anything in <span>All Uganda</span></h1>
+                <form action="#">
+                    <input type="text" placeholder="I am looking for..." />
+                    <button type="submit"><i class="fa fa-search"></i> Search</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories">
+            <div class="container">
+                <h2>Shop by Categories</h2>
+                <div class="category">
+                    <img src="jacket.jpg" alt="Fashion">
+                    <h3>Fashion</h3>
+                    <p>83,840 ads</p>
+                </div>
+                <div class="category">
+                    <img src="bottle.jpg" alt="Groceries">
+                    <h3>Groceries</h3>
+                    <p>31,523 ads</p>
+                </div>
+                <div class="category">
+                    <img src="samsung.jpg" alt="Phones & Tablets">
+                    <h3>Phones & Tablets</h3>
+                    <p>66,813 ads</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <div class="container">
+                <h2>Featured Products</h2>
+                <div class="product">
+                    <img src="microwave.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>$49.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="potato.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>$99.99</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="cable.jpg" alt="Product 3">
+                    <h3>Product 3</h3>
+                    <p>$199.99</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonial">
+                    <p>"I had a great experience shopping on China Town. The product quality is amazing, and delivery was quick!"</p>
+                    <h4>John Doe</h4>
+                </div>
+                <div class="testimonial">
+                    <p>"Fantastic selection of products at great prices. I'll definitely be shopping here again!"</p>
+                    <h4>Jane Smith</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Sign up for our newsletter to receive the latest offers and updates.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.twitter.com" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </div>
+            <p>&copy; 2024 China Town UG. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Details Entry</title>
+</head>
+<body>
+    <h2>Enter Staff Details</h2>
+    <form action="test.php" method="post" onsubmit="return true;">
+        <label for="staff_number">Staff Number:</label><br>
+        <input type="number" id="staff_number" name="staff_number" required><br><br>
+
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+
+        <label for="phone_number">Phone Number:</label><br>
+        <input type="text" id="phone_number" name="phone_number" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="category">Category:</label><br>
+        <select id="category" name="category" required>
+            <option value="Sales Manager">Sales Manager</option>
+            <option value="Seller">Seller</option>
+            <option value="Delivery Person">Delivery Person</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect and sanitize form data
+    $staff_number = htmlspecialchars($_POST['staff_number']);
+    $first_name = htmlspecialchars($_POST['first_name']);
+    $last_name = htmlspecialchars($_POST['last_name']);
+    $phone_number = htmlspecialchars($_POST['phone_number']);
+    $email = htmlspecialchars($_POST['email']);
+    $category = htmlspecialchars($_POST['category']);
+
+    // Display the collected data
+    echo "<h2>Staff Details Submitted:</h2>";
+    echo "Staff Number: " . $staff_number . "<br>";
+    echo "First Name: " . $first_name . "<br>";
+    echo "Last Name: " . $last_name . "<br>";
+    echo "Phone Number: " . $phone_number . "<br>";
+    echo "Email: " . $email . "<br>";
+    echo "Category: " . $category . "<br>";
+
+    // Here, you can add code to insert the data into a database or perform other processing
+} else {
+    echo "Invalid request method.";
+}
+?>
+
+</body>
+</html>

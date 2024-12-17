@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - China Town</title>
+    <link rel="stylesheet" href="main.css">
+
+    <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply the imported Google Fonts */
+        body {
+            font-family: 'Open Sans', sans-serif; /* For body text */
+            margin: 0;
+            padding: 0;
+            background: url('your-background-image.jpg') no-repeat center center fixed; /* Replace with your image URL */
+            background-size: cover; /* Ensure the image covers the entire screen */
+            color: #333;
+        }
+
+        /* Optional: Add an overlay to improve text contrast */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Black overlay with transparency */
+            z-index: -1; /* Ensure overlay stays behind content */
+        }
+
+        header {
+            background-color:black; /* Transparent background for header */
+            padding: 20px 0;
+        }
+
+        header .logo {
+            font-family: 'Roboto', sans-serif; /* For logo font */
+            font-size: 2em;
+            color: #e3eb76;
+            text-decoration: none;
+            padding-left: 20px;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            font-family: 'Roboto', sans-serif; /* For navigation links */
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px;
+        }
+
+        header nav ul li a:hover {
+            color: #f1c40f;
+        }
+
+        header .header-actions {
+            float: right;
+            margin-top: -35px;
+        }
+
+        header .header-actions a {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 100px;
+            background-color:#28a745;
+        }
+
+        header .header-actions a:hover {
+            background-color: #28a745;
+        }
+
+        main {
+            background-color: black; /* White background with transparency */
+            padding: 50px 0;
+        }
+
+        .cart {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .cart h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cart-items {
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .cart-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .cart-item-info {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .cart-item-info h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            color: #333;
+            margin: 0;
+        }
+
+        .cart-item-info p {
+            font-size: 1em;
+            color: #777;
+            margin: 5px 0;
+        }
+
+        .quantity {
+            width: 60px;
+            padding: 5px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 15px;
+        }
+
+        .remove-item {
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove-item:hover {
+            background-color: #c0392b;
+        }
+
+        .cart-summary {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-summary p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            font-size: 1.4em;
+            color: #333;
+        }
+
+        .checkout-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-transform: uppercase;
+        }
+
+        .checkout-btn:hover {
+            background-color: #28a745;
+        }
+
+        footer {
+            background-color:black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Overlay for transparency effect -->
+    <div class="overlay"></div>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">China Town</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+
+            </nav>
+            
+        </div>
+    </header>
+
+    <main>
+        <section class="cart">
+            <div class="container">
+                <h1>Your Shopping Cart</h1>
+
+                <div class="cart-items">
+                    <!-- Example cart items -->
+                    <div class="cart-item">
+                        <img src="samsung.jpg" alt="Smartphone A">
+                        <div class="cart-item-info">
+                            <h3>Smartphone A</h3>
+                            <p>Price: $200</p>
+                            <input type="number" value="1" min="1" class="quantity">
+                            <button class="remove-item">Remove</button>
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <img src="shirt.jpg" alt="Stylish Shirt">
+                        <div class="cart-item-info">
+                            <h3>Stylish Shirt</h3>
+                            <p>Price: $30</p>
+                            <input type="number" value="1" min="1" class="quantity">
+                            <button class="remove-item">Remove</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <p><strong>Total: $230</strong></p>
+                    <button class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 China Town UG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Remove item functionality
+        const removeButtons = document.querySelectorAll('.remove-item');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.cart-item').remove();
+                updateTotal();
+            });
+        });
+
+        // Update the total price when quantity changes
+        const quantityInputs = document.querySelectorAll('.quantity');
+        quantityInputs.forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+
+        function updateTotal() {
+            let total = 0;
+            const cartItems = document.querySelectorAll('.cart-item');
+            cartItems.forEach(item => {
+                const price = parseFloat(item.querySelector('p').innerText.replace('Price: $', ''));
+                const quantity = item.querySelector('.quantity').value;
+                total += price * quantity;
+            });
+            document.querySelector('.cart-summary p').innerText = `Total: $${total}`;
+        }
+    </script>
+</body>
+
+</html>
